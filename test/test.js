@@ -117,6 +117,9 @@ describe("Test 3. Transfer ERC-20 tokens from one account to another", function 
 
     const amount = 10000;
 
+    console.log("--------------------------------------\napproving the smart contract to send tokens....");
+    await myToken.approve(sender.address, 10000);
+
     console.log("--------------------------------------\nTransfering tokens from the sender to the receiver....");
     await myToken.transfer(receiver.address, 10000);
     
@@ -171,8 +174,11 @@ describe("Test 4. Transfer ERC-20 tokens from one account to another using a Sol
 
     const amount = 100;
 
+    console.log("--------------------------------------\napproving the smart contract to send tokens....");
+    await myToken.approve(sender.address, 100);
+
     console.log("--------------------------------------\nTransfering tokens from the sender to the receiver via in-built open zeppeling ERC-20 Solidity function....");
-    await myToken.connect(sender).transfer(receiver.address, amount);
+    await myToken.transfer(receiver.address, amount);
 
     const SenderBalance = await myToken.balanceOf(sender.address);
     const ReceiverBalance = await myToken.balanceOf(receiver.address);

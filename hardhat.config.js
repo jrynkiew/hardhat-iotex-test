@@ -23,7 +23,7 @@ module.exports = {
       ],
     },
     testnet: {
-      url: "http://localhost:8645",
+      url: "https://babel-api.testnet.iotex.io",
       accounts: [TestPrivateKey1, TestPrivateKey2],
       chainId: 4690,
       gas: 85000,
