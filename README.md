@@ -84,4 +84,4 @@ Waiting for contract to be deployed....
       at EthersProviderWrapper.<anonymous> (node_modules\@ethersproject\providers\src.ts\json-rpc-provider.ts:634:27)
 ```
 
-Please explain why this happens.
+I found that the `Error: invalid hex string (argument="value", value="-0x0da320", code=INVALID_ARGUMENT, version=bytes/5.7.0)` usually occurs when the transaction runs out of gas. Is there any way to provide better error handling for IoTeX?
